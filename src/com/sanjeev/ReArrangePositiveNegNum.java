@@ -59,6 +59,40 @@ public class ReArrangePositiveNegNum {
         System.arraycopy(tempArray,0,arr,0,arr.length);
     }
 
+
+    //O(n)
+    //O(1)
+    //order not maintain
+    public static void rearrange3(int arr[]){
+      //First of all instead of sorting rearrange array so that all negative number are at front
+        //and all positive at back in O(n)
+        //check this
+        int i=0,j=0,temp;
+        for(i=0;i<arr.length;i++){
+            if(arr[i]<0){
+                temp=arr[i];
+                arr[i]=arr[j];
+                arr[j]=temp;
+                j++;
+            }
+        }
+
+        if(j==0 || j==arr.length) return;
+
+        //Now we have array where negative are at front and pos at end
+        //now instead of copy array which require O(n) space use this
+
+        for(i=0;i<arr.length;i=i+2){
+            if(j==arr.length) break;
+            temp = arr[i];
+            arr[i]= arr[j];
+            arr[j]=temp;
+            j++;
+        }
+    }
+
+
+
     public static void main(String[] args) {
 
         System.out.println("**********Method 1*********");
@@ -89,5 +123,21 @@ public class ReArrangePositiveNegNum {
         int arr7[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
         rearrange2(arr7);
         System.out.println(Arrays.toString(arr7));
+
+
+        System.out.println("**********Method 3*********");
+        int arr8[] = {-1, 2, -3, 4, 5, 6, -7, 8, 9};
+        rearrange3(arr8);
+        System.out.println(Arrays.toString(arr8));
+        int arr9[] = {-1, -2, -3, 4, 5, -6, -7, 8, 9};
+        rearrange3(arr9);
+        System.out.println(Arrays.toString(arr9));
+        int arr10[] = {-1, -2, -3, -4, -5, -6, -7, -8, -9};
+        rearrange3(arr10);
+        System.out.println(Arrays.toString(arr10));
+        int arr11[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+        rearrange3(arr11);
+        System.out.println(Arrays.toString(arr11));
+
     }
 }
