@@ -5,6 +5,8 @@ import java.util.Arrays;
 /**
  * Created by Sanjeev Guglani
  */
+
+//Rearrange positive and negative numbers in O(n) time and O(1) extra space
 public class ReArrangePositiveNegNum {
 
     //O(n2) Time Complexity
