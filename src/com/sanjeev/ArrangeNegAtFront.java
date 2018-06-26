@@ -5,6 +5,8 @@ import java.util.Arrays;
 /**
  * Created by Sanjeev Guglani
  */
+
+//Rearrange positive and negative numbers with constant extra space
 public class ArrangeNegAtFront {
 
     //O(n) time // O(n) space // order maintain
@@ -45,6 +47,10 @@ public class ArrangeNegAtFront {
             }
         }
     }
+
+
+
+
 
 
     public static void main(String[] args) {
