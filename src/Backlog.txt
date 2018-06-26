@@ -1,0 +1,2 @@
+1.Rearrange array such that arr[i] >= arr[j] if i is even and arr[i]<=arr[j] if i is odd and j < i
+2.Rearrange positive and negative numbers with constant extra space
